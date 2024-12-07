@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # In-memory storage for tasks
 tasks = []
@@ -22,6 +22,6 @@ def delete_task(task_id):
         tasks.pop(task_id)
     return redirect(url_for('home'))
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     # Listen on all network interfaces (0.0.0.0) and a specific port (e.g., 80)
     app.run(host='0.0.0.0', port=80)
